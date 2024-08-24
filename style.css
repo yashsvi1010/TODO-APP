@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background-color: #74f195;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  display: flex;
+  position: sticky;
+}
+
+nav ul {
+  overflow: auto;
+
+  height: 50px;
+  display: inline-flex;
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+}
+nav li {
+  padding: 5px 10px;
+  height: 40px;
+  margin: 0 2vw;
+  display: flex;
+  list-style: none;
+  background-color: #4fd6f4;
+  font-size: larger;
+  font-family: "Poetsen One", sans-serif;
+  color: black;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.createtask {
+  display: flex;
+  height: 100px;
+  width: 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: content-box;
+}
+.createtask-btn {
+  padding: 10px 10px;
+  margin: 10px 10px;
+  background-color: rgb(84, 242, 123);
+  border-radius: 5%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.add-btn {
+  margin: auto;
+  box-sizing: border-box;
+  background-color: rgb(23, 240, 56);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-width: 4px;
+  border-color: #41bcec;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+.add-btn p {
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  font-family: "Poetsen One", sans-serif;
+}
+.formbtn {
+  margin: 10px 5px 5px 5px;
+  box-sizing: content-box;
+}
+.formbtn button {
+  box-sizing: border-box;
+
+  height: 30px;
+  width: 45px;
+  background-color: #00ff9f;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.closeTask-form {
+  animation-name: fadeout;
+}
+.taskFormBox {
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+}
+
+.taskForm-overlay {
+  display: none;
+
+  margin: 20px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #bbecba;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+/* form popup animation*/
+.taskForm-overlay.show {
+  display: flex;
+  opacity: 1;
+}
+
+/* form animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.taskForm-container {
+  padding: 15px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: #00ff0440;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  width: 40vw;
+  height: 250px;
+  text-align: center;
+  box-sizing: content-box;
+  width: 90%;
+  flex-direction: column;
+}
+
+.taskTitle-input {
+  margin: 10px 10px;
+  width: 30vw;
+  height: 30px;
+  box-sizing: content-box;
+  width: 70%;
+  background-color: rgb(187, 241, 241);
+  font-size: larger;
+}
+.taskDate {
+  text-align: start;
+  font-family: "Poetsen One", sans-serif;
+  color: white;
+  margin: 5px 0 5px 2px;
+  font-size: small;
+}
+
+.taskDesc-input {
+  margin: 10px 3px;
+  box-sizing: content-box;
+  width: 80%;
+  height: 30%;
+  font-size: large;
+  text-align: left;
+  background-color: rgb(187, 241, 198);
+}
+
+.card-container {
+  margin: 30px 0 0px 0;
+  padding: 20px 10px 10px 20px;
+  background-color: #77f185f9;
+  box-sizing: content-box;
+  min-height: 67vh;
+}
+.card-body .card-title .card-text .card-body .card-container-btn::before {
+  display: flex;
+}
+
+.card-body {
+  margin: 10px 10px;
+  float: left;
+  width: 40%;
+  height: 250px;
+  border: 2px solid #33ca33;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 6px #232222d6;
+  padding: 10px 10px;
+  border-radius: 8px;
+  opacity: 1;
+}
+
+.card-body.tick {
+  opacity: 0.5;
+  background-color: grey;
+}
+.card-title {
+  margin: 5px 0 2px 2px;
+}
+.card-text {
+  margin: 5px 0 1px 5px;
+  padding: 2px;
+  height: 125px;
+  box-sizing: border-box;
+}
+.card-container-btn {
+  margin: 5px 0 5px 0;
+  padding: 8px 0 0 0;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: content-box;
+}
+
+.card-btn {
+  height: 21px;
+  width: 103px;
+  margin: 5px 5px;
+  background-color: #00ff9f;
+  font-size: large;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px #232222d6;
+}
+.done-task {
+  height: 21px;
+  width: 103px;
+  margin: 5px 5px;
+  background-color: #00ff9f;
+  font-size: large;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px #232222d6;
+}
+.done-task .untick {
+  height: 21px;
+  width: 103px;
+  margin: 5px 5px;
+  background-color: #00ff9f;
+  font-size: large;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px #232222d6;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: rgb(34, 176, 176);
+  color: white;
+  min-height: 50px;
+  font-family: "Poor Story", system-ui;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+}
